@@ -11,7 +11,7 @@ Simply put, is a collection of information. Less simply, it's a structured colle
 Container for data. A collection of related information, usually presented as an arrangement of horizontal rows and vertical columns. A single database can contain many tables, and in such cases, logical connections (relations) exist between them.
 
 **A record** is a single row in a table, i.e., a set of fields appearing in it. For example, a set of characteristics for a given student (user).
-![Logo](https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/1.jpg?raw=true)
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/1.jpg?raw=true" width="300">
 
 The record **does not have to** contain ALL features of the object. It can be, for example, just a name and surname.
 
