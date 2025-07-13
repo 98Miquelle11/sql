@@ -86,3 +86,24 @@ Database Management System. **MySQL** is an example of such system.
 Structured Query Language. *query* – a query to a database. **Types of queries**: inserting, searching, changing, deleting, and changing the structure of tables or databases.
 
 When creating complex queries, you must provide a list of all relationships that exist between the tables used in the query!
+
+**MySQL** uses a **relational database model**. In this model, we divide the database data into tables and define fields within the tables, known as keys. Relationships between tables are then defined, combining the data into a **logical whole** that is understandable to those using the database.
+
+### Relationship
+A logical connection between two tables, implemented using a primary key, a foreign key, or a special table (a linking table). Each relationship is described by a relationship type. We distinguish the following types of relationships: one-to-one, one-to-many, and many-to-many.
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/11.jpg?raw=true" width="550">
+
+### Data types
+Each column of a table in the database stores data of the same type
+
+| Type       | Size                         | Description                                                                 |
+|------------|------------------------------|-----------------------------------------------------------------------------|
+| CHAR[x]    | x bytes                      | Field storing from 0 up to max. **255 characters**                         |
+| VARCHAR[x] | String length x + 1 byte     | Variable-length text field                                                  |
+| TEXT       | String length + 2 bytes      | String with a maximum length of **65,535 characters**                      |
+| LONGTEXT   | String length + 4 bytes      | String with a maximum length of **4,294,967,295 characters**              |
+| INT        | 4 bytes                      | Numbers in the range from **-2,147,483,648 to 2,147,483,647**              |
+| FLOAT      | 4 bytes                      | Real number, floating-point                                                 |
+| DATE       | 3 bytes                      | Date in the format **YYYY-MM-DD**                                           |
+| TIME       | 3 bytes                      | Time in the format **HH:MM:SS**                                             |
