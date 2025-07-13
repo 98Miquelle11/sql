@@ -148,7 +148,7 @@ They allow a PHP script to send a query to the database. They support **prepared
 `SELECT * FROM questions WHERE id=15`
 
 - **SELECT** (select),
-- ** * ** (all columns),
+- * (all columns),
 - **FROM** (from the table),
 - **questions** (about this name),
 - **WHERE** (where),
