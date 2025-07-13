@@ -148,7 +148,7 @@ They allow a PHP script to send a query to the database. They support **prepared
 `SELECT * FROM questions WHERE id=15`
 
 - **SELECT** (select),
-- * (all columns),
+- "*" (all columns),
 - **FROM** (from the table),
 - **questions** (about this name),
 - **WHERE** (where),
@@ -167,7 +167,7 @@ Sorting records means arranging them according to some criterion. The criterion 
 `SELECT * FROM questions ORDER BY content ASC`
 
 - **SELECT** (select),
-- * (all columns),
+- "*" (all columns),
 - **FROM** (from the table),
 - **questions** (about this name),
 - **ORDER BY** (and sort by),
@@ -190,7 +190,7 @@ Sorting records means arranging them according to some criterion. The criterion 
 `SELECT * FROM questions WHERE content LIKE "Jaki%"`
 
 - **SELECT** (select),
-- * (all columns),
+- "*" (all columns),
 - **FROM** (from the table),
 - **questions** (about this name),
 - **WHERE** (where),
