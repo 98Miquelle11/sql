@@ -70,15 +70,15 @@ Database Management System. **MySQL** is an example of such system.
 
 * **Network** – in this model, individual elements can connect with others and create a framework. This model can be a visualization of the organization of document flow,
 
-<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/8.jpg?raw=true" width="500">
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/8.jpg?raw=true" width="450">
 
 * **Relational** – its basis is storing data in a table (or tables) called relations, consisting of rows and columns. A characteristic of this model is the close relationship between the fields that make up the rows and the columns that define the content of those fields. **MySQL** uses the relational database model.
 
-<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/9.jpg?raw=true" width="500">
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/9.jpg?raw=true" width="550">
 
 *An example of a relational model in the form of a single table.*
 
-<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/10.jpg?raw=true" width="500">
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/10.jpg?raw=true" width="550">
 
 *An example of a relational model in the form of two related tables.*
 
