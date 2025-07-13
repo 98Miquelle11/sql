@@ -39,7 +39,7 @@ One or more fields whose value uniquely identifies each record in a table. This 
 **Redundancy (repetition)** - a phenomenon that we want to avoid when creating a relational model in databases.
 
 ## DBMS
-Database Management System. **MySQL** is an example of such system.
+Database Management System. **MySQL**, PostgreSQL, Firebird, Oracle Database are the examples of such system.
 
 **A model is** an (abstract, virtual) representation of a fragment of the real world (e.g. in a bookstore). It is a transfer of real matters to zeros and ones stored in a computer.
 
@@ -82,8 +82,15 @@ Database Management System. **MySQL** is an example of such system.
 
 *An example of a relational model in the form of two related tables.*
 
-### SQL
-Structured Query Language. *query* – a query to a database. **Types of queries**: inserting, searching, changing, deleting, and changing the structure of tables or databases.
+## SQL
+Structured Query Language. *query* – a query to a database. 
+
+**Types of queries**: 
+* inserting,
+* searching,
+* changing,
+* deleting,
+* changing the structure of tables or databases.
 
 When creating complex queries, you must provide a list of all relationships that exist between the tables used in the query!
 
@@ -107,3 +114,86 @@ Each column of a table in the database stores data of the same type
 | FLOAT      | 4 bytes                      | Real number, floating-point                                                 |
 | DATE       | 3 bytes                      | Date in the format **YYYY-MM-DD**                                           |
 | TIME       | 3 bytes                      | Time in the format **HH:MM:SS**                                             |
+
+### PHP
+PHP is an acronym for *PHP: Hypertext Preprocessor*. It is a widely-used, open source scripting language, which scripts are executed on the server. PHP files can contain **text, HTML, CSS, JavaScript**, and **PHP** code.
+
+PHP can:
+* generate dynamic page content,
+* generate dynamic page content,
+* collect form data,
+* send and receive cookies,
+* add, delete, modify data in your database,
+* be used to control user-access,
+* encrypt data.
+
+With PHP you are not limited to output HTML. You can output images or PDF files. You can also output any text, such as XHTML and XML.
+
+### **MySQLi** and **PDO** PHP functions
+They allow a PHP script to send a query to the database. They support **prepared statements, transactions** and **better security** (e.g., against SQL injection).
+
+**MySQLi - example:**
+
+`$mysqli = new mysqli("localhost", "user", "pass", "db");`
+
+`$result = $mysqli->query("SELECT * FROM users");`
+
+**PDO (PHP Data Objects) - example:**
+
+`$pdo = new PDO("mysql:host=localhost;dbname=db", "user", "pass");`
+
+`$stmt = $pdo->query("SELECT * FROM users");`
+
+### SQL search query
+`SELECT * FROM questions WHERE id=15`
+
+- **SELECT** (select),
+- ** * ** (all columns),
+- **FROM** (from the table),
+- **questions** (about this name),
+- **WHERE** (where),
+- **id=15** (this condition occurs).
+
+### Logic
+* **AND** is true when **both conditions** are met at the same time,
+* **OR** is true when **at least one condition** is met.
+
+### Sorting
+Sorting records means arranging them according to some criterion. The criterion is the name or names of the fields by which the sorting is performed.
+
+*For example*, it can be an **ascending sort** (sorts values in ascending order from A to Z, or from 0 to 9) or a **descending sort** (sorts values in descending order from Z to A, or from 9 to 0).
+
+### Sorting in SQL
+`SELECT * FROM questions ORDER BY content ASC`
+
+- **SELECT** (select),
+- * (all columns),
+- **FROM** (from the table),
+- **questions** (about this name),
+- **ORDER BY** (and sort by),
+- **content** (this field),
+- **ASC** (ascending - or DESC *descending*).
+
+### BETWEEN clause
+`SELECT content FROM questions WHERE id BETWEEN 10 AND 12`
+
+- **SELECT** (select),
+- **content** (this column),
+- **FROM** (from the table),
+- **questions** (about this name),
+- **WHERE** (where),
+- **id** ("id" field value),
+- **BETWEEN** ("is between"),
+- **10 AND 12** (values: 10 and 12).
+
+### LIKE (similar to) clause
+`SELECT * FROM questions WHERE content LIKE "Jaki%"`
+
+- **SELECT** (select),
+- * (all columns),
+- **FROM** (from the table),
+- **questions** (about this name),
+- **WHERE** (where),
+- **content** (this field),
+- **LIKE** (is similar to),
+- **Jaki%** (this phrase, which means it is started with "Jaki" and is followed by anything - *including nothing*).
