@@ -58,27 +58,27 @@ Database Management System. **MySQL** is an example of such system.
 **Database models**:
 * **Homogeneous model** - uses only one data set (e.g., table, file, list, catalog). This model is conceptually simple, but its drawbacks include the difficulty of finding some data and possible redundancy associated with attempts to streamline the search for records or attributes (e.g., a book catalog),
 
-<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/5.jpg?raw=true" width="250">
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/5.jpg?raw=true" width="350">
 
 * **The hierarchical model** is based on tree-like (hierarchical) data structures characterized by the use of parent-child relationships. A disadvantage of this model is its lack of flexibility in data operations, such as inserting child records,
 
-<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/6.jpg?raw=true" width="250">
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/6.jpg?raw=true" width="350">
 
 * **Object model** – based on the approach we know from **object-oriented programming**: reality is represented by objects, which we understand as **class instances**,
 
-<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/7.jpg?raw=true" width="250">
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/7.jpg?raw=true" width="350">
 
 * **Network** – in this model, individual elements can connect with others and create a framework. This model can be a visualization of the organization of document flow,
 
-<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/8.jpg?raw=true" width="250">
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/8.jpg?raw=true" width="500">
 
 * **Relational** – its basis is storing data in a table (or tables) called relations, consisting of rows and columns. A characteristic of this model is the close relationship between the fields that make up the rows and the columns that define the content of those fields. **MySQL** uses the relational database model.
 
-<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/9.jpg?raw=true" width="250">
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/9.jpg?raw=true" width="500">
 
 *An example of a relational model in the form of a single table.*
 
-<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/10.jpg?raw=true" width="250">
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/10.jpg?raw=true" width="500">
 
 *An example of a relational model in the form of two related tables.*
 
