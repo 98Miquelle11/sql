@@ -92,7 +92,7 @@ When creating complex queries, you must provide a list of all relationships that
 ### Relationship
 A logical connection between two tables, implemented using a primary key, a foreign key, or a special table (a linking table). Each relationship is described by a relationship type. We distinguish the following types of relationships: one-to-one, one-to-many, and many-to-many.
 
-<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/11.jpg?raw=true" width="550">
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/11.jpg?raw=true" width="700">
 
 ### Data types
 Each column of a table in the database stores data of the same type
