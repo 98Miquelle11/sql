@@ -2,8 +2,7 @@
 
 *Success is a progressive realization of a valuable idea within a patient time frame.*
 
-### How to  update your local files
-`git pull origin (your branch)`
+# Theory
 
 ## Database
 Simply put, database is a collection of information. Less simply, it's a structured collection of data (information), typically organized as a set of tables linked by relationships. 
@@ -202,7 +201,12 @@ Sorting records means arranging them according to some criterion. The criterion 
 - **LIKE** (is similar to),
 - **Jaki%** (this phrase, which means it is started with "Jaki" and is followed by anything - *including nothing*).
 
-## Practice
+# Practice
+
+### How to update your local files
+`git pull origin (your branch)`
+
+### How to work with MySQL
 1. You need to install **XAMP Control Panel** and switch on actions on **Apache** and **MySQL** modules,
 2. If you want to work with SQL on VS Code, install SQL tools - **SQLTools** by Matheus Teixeira and **SQLTools MySQL/MariaDB Driver**,
 3. In Command Palette type `SQLTools Management: Add New Connection`,
