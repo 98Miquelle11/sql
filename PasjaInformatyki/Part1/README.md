@@ -1,4 +1,4 @@
-# [Chapter 1: Databases. First SELECT queries.](https://www.youtube.com/watch?v=99JAI24Zd24&list=PLOYHgt8dIdoymv-Wzvs8M-OsKFD31VTVZ&index=1)
+# [Part 1: Databases. First SELECT queries.](https://www.youtube.com/watch?v=99JAI24Zd24&list=PLOYHgt8dIdoymv-Wzvs8M-OsKFD31VTVZ&index=1)
 
 *Success is a progressive realization of a valuable idea within a patient time frame.*
 
