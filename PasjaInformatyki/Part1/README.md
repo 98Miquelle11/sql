@@ -1,9 +1,8 @@
-# [Chapter 1: Databases. First SELECT queries.](https://www.youtube.com/watch?v=99JAI24Zd24&list=PLOYHgt8dIdoymv-Wzvs8M-OsKFD31VTVZ&index=1)
+# [Part 1: Databases. First SELECT queries.](https://www.youtube.com/watch?v=99JAI24Zd24&list=PLOYHgt8dIdoymv-Wzvs8M-OsKFD31VTVZ&index=1)
 
 *Success is a progressive realization of a valuable idea within a patient time frame.*
 
-### How to  update your local files
-`git pull origin (your branch)`
+# Theory
 
 ## Database
 Simply put, database is a collection of information. Less simply, it's a structured collection of data (information), typically organized as a set of tables linked by relationships. 
@@ -12,6 +11,10 @@ Simply put, database is a collection of information. Less simply, it's a structu
 
 ## Table
 Table is a container for data. A collection of related information, usually presented as an arrangement of horizontal rows and vertical columns. A single database can contain many tables, and in such cases, logical connections (relations) exist between them.
+
+**Column** - a feature (attribute) of the object, the attribute is e.g.: *name*.
+
+**Row** - a value of selected features of a specific object in the database.
 
 ### Record
 Single row in a table, e.g., a set of fields appearing in it. For example, a set of characteristics for a given student (user).
@@ -28,13 +31,13 @@ Part of a table that stores individual data, e.g. the name of a specific person 
 <img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/2.jpg?raw=true" width="250">
 
 ### Primary key
-One or more fields whose value uniquely identifies each record in a table. This characteristic of a key is called uniqueness.
+One or more fields whose value uniquely identifies each record in a table. This characteristic of a key is called uniqueness. E.g **ID number**.
 
 **Example**: book nr 4 is a copy of "Pan Tadeusz".
 
 <img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/4.jpg?raw=true" width="250">
 
-**The database system** should ensure that the ID value is never duplicated. To achieve this, the ID field can be designated as the primary key.
+**The database system** should ensure that the ID value is **never duplicated**. To achieve this, the **ID field can be designated as the primary key**.
 
 **Redundancy (repetition)** - a phenomenon that we want to avoid when creating a relational model in databases.
 
@@ -197,3 +200,31 @@ Sorting records means arranging them according to some criterion. The criterion 
 - **content** (this field),
 - **LIKE** (is similar to),
 - **Jaki%** (this phrase, which means it is started with "Jaki" and is followed by anything - *including nothing*).
+
+# Practice
+
+### How to update your local files
+`git pull origin (your branch)`
+
+### How to work with MySQL
+1. You need to install **XAMP Control Panel** and switch on actions on **Apache** and **MySQL** modules,
+2. If you want to work with SQL on VS Code, install SQL tools - **SQLTools** by Matheus Teixeira and **SQLTools MySQL/MariaDB Driver**,
+3. In Command Palette type `SQLTools Management: Add New Connection`,
+4. Choose **MariaDB** (is fully compatible with most MySQL commands and structure, its driver will connect successfully to your XAMPP database engine),
+5. Fill the connection info:
+   
+   * **Connection name**: e.g. `xampp-mysql` (or anything),
+   * **Connection group**: (you can leave it blank or put something like `local` or `xampp`),
+   * **Connect using**: `Server and Port` (already selected),
+   * **Server Adress**: `localhost`,
+   * **Port**: `3306` (default for MariaDB/MySQL),
+   * **Database**: (optional – you can leave it blank to access all),
+   * **Username**: `root`,
+   * **Password mode**: (Leave as `SQLTools Driver Credentials`),
+   * **Authentication Protocol**: `default` (leave it as-is unless connection fails),
+   * **SSL**: `Disabled` (good for local development),
+   * **Connection Timeout**: (optional) Leave blank or set `10000` (10 seconds),
+   * **Show records default limit**: `50` (default is fine).
+
+6. Click **Test Connection** → if successful, click **Save Connection**.
+7. Create a `.sql` file, write your SQL commands, then right-click and choose **Run Query** or use `Ctrl+Alt+E`.
