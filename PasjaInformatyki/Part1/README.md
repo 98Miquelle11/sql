@@ -206,19 +206,21 @@ Sorting records means arranging them according to some criterion. The criterion 
 ### How to update your local files
 `git pull origin (your branch)`
 
-### How to work with MySQL
+### How to initiate MySQL on VS Code
 1. You need to install **XAMP Control Panel** and switch on actions on **Apache** and **MySQL** modules,
-2. If you want to work with SQL on VS Code, install SQL tools - **SQLTools** by Matheus Teixeira and **SQLTools MySQL/MariaDB Driver**,
-3. In Command Palette type `SQLTools Management: Add New Connection`,
-4. Choose **MariaDB** (is fully compatible with most MySQL commands and structure, its driver will connect successfully to your XAMPP database engine),
-5. Fill the connection info:
+2. Open VS Code, go to **Extensions**, then install SQL tools - **SQLTools** by Matheus Teixeira and **SQLTools MySQL/MariaDB Driver**,
+3. Go to `http://localhost/phpmyadmin` > **User accounts**, and select **Edit priviligies** in a row when *User name = root* and *Host name = localhost*,
+4. Click **Change password** and set it,
+5. In Command Palette type `SQLTools Management: Add New Connection`,
+6. Choose **MariaDB** (is fully compatible with most MySQL commands and structure, its driver will connect successfully to your XAMPP database engine),
+7. Fill the connection info:
    
    * **Connection name**: e.g. `xampp-mysql` (or anything),
    * **Connection group**: (you can leave it blank or put something like `local` or `xampp`),
    * **Connect using**: `Server and Port` (already selected),
    * **Server Adress**: `localhost`,
    * **Port**: `3306` (default for MariaDB/MySQL),
-   * **Database**: (optional – you can leave it blank to access all),
+   * **Database**: `mysql` (just connect this default system database called, if you don't have a custom database yet),
    * **Username**: `root`,
    * **Password mode**: (Leave as `SQLTools Driver Credentials`),
    * **Authentication Protocol**: `default` (leave it as-is unless connection fails),
@@ -226,5 +228,17 @@ Sorting records means arranging them according to some criterion. The criterion 
    * **Connection Timeout**: (optional) Leave blank or set `10000` (10 seconds),
    * **Show records default limit**: `50` (default is fine).
 
-6. Click **Test Connection** → if successful, click **Save Connection**.
-7. Create a `.sql` file, write your SQL commands, then right-click and choose **Run Query** or use `Ctrl+Alt+E`.
+8. Click **Test Connection** → if successful, click **Save Connection**, then **Connect now**
+   
+   (now you can use **VS Code** environment instead of **phpMyAdmin**, if you prefer),
+   
+10. Create a `.sql` file, write your SQL commands, then right-click and choose **Run Query** or use `Ctrl+Alt+E`.
+
+### How to work with MySQL on VS Code
+* `SQLTools internal: Attach connection to this file` binds your open `.sql` file to database connection (like `xampp-mysql`),
+* if you want to run all queries, click **Run on active connection** inside your file window,
+* if you want to run selected query, highlight it, enter command pallete and run `SQLTools Connection: Run Selected Query`.
+
+### Working with phpMyAdmin
+* when you are making a table inside your selected database, select **PRIMARY** Index, where you want your Name to be **Primary key**,
+* 
