@@ -77,13 +77,12 @@ Database Management System. **MySQL**, PostgreSQL, Firebird, Oracle Database are
 
 * **Relational** – its basis is storing data in a table (or tables) called relations, consisting of rows and columns. A characteristic of this model is the close relationship between the fields that make up the rows and the columns that define the content of those fields. **MySQL** uses the relational database model.
 
-<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/9.jpg?raw=true" width="550">
 
 *An example of a relational model in the form of a single table.*
-
-<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/10.jpg?raw=true" width="550">
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/9.jpg?raw=true" width="550">
 
 *An example of a relational model in the form of two related tables.*
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/10.jpg?raw=true" width="550">
 
 ## SQL
 Structured Query Language. *query* – a query to a database. 
@@ -122,7 +121,6 @@ Each column of a table in the database stores data of the same type
 PHP is an acronym for *PHP: Hypertext Preprocessor*. It is a widely-used, open source scripting language, which scripts are executed on the server. PHP files can contain **text, HTML, CSS, JavaScript**, and **PHP** code.
 
 PHP can:
-* generate dynamic page content,
 * generate dynamic page content,
 * collect form data,
 * send and receive cookies,
@@ -164,7 +162,7 @@ They allow a PHP script to send a query to the database. They support **prepared
 ### Sorting
 Sorting records means arranging them according to some criterion. The criterion is the name or names of the fields by which the sorting is performed.
 
-*For example*, it can be an **ascending sort** (sorts values in ascending order from A to Z, or from 0 to 9) or a **descending sort** (sorts values in descending order from Z to A, or from 9 to 0).
+*For example:* It can be an **ascending sort** (sorts values in ascending order from A to Z, or from 0 to 9) or a **descending sort** (sorts values in descending order from Z to A, or from 9 to 0).
 
 ### Sorting in SQL
 `SELECT * FROM questions ORDER BY content ASC`
@@ -234,11 +232,12 @@ Sorting records means arranging them according to some criterion. The criterion 
    
 10. Create a `.sql` file, write your SQL commands, then right-click and choose **Run Query** or use `Ctrl+Alt+E`.
 
-### How to work with MySQL on VS Code
+### Working with MySQL on VS Code
 * `SQLTools internal: Attach connection to this file` binds your open `.sql` file to database connection (like `xampp-mysql`),
-* if you want to run all queries, click **Run on active connection** inside your file window,
-* if you want to run selected query, highlight it, enter command pallete and run `SQLTools Connection: Run Selected Query`.
+* If you want to run all queries, click **Run on active connection** inside your file window,
+* If you want to run selected query, highlight it, enter command pallete and run `SQLTools Connection: Run Selected Query`.
 
 ### Working with phpMyAdmin
-* when you are making a table inside your selected database, select **PRIMARY** Index, where you want your Name to be **Primary key**,
-* 
+* Go to `http://localhost/phpmyadmin`,
+* When you are making a table inside your selected database, select **PRIMARY** Index, where you want your Name to be **Primary key**,
+* If we (for example) used phpMyAdmin on the internet hosting we purchased, we would first have to log in to the system. But for the purposes of this course, we are using local host (local server), which is visible only for us.
