@@ -240,15 +240,17 @@ Sorting records means arranging them according to some criterion. The criterion 
 ### Working with phpMyAdmin
 * Go to `http://localhost/phpmyadmin`,
 * When you are making a table inside your selected database, select **PRIMARY** Index, where you want your Name to be **Primary key**,
-* If we (for example) used phpMyAdmin on the internet hosting we purchased, we would first have to log in to the system. But for the purposes of this course, we are using local host (local server), which is visible only for us,
-* If local host will demand username and passowrd from you to log in, open `\xampp\phpMyAdmin\config.inc.php` file (whenever it is located), find the line `$cfg['Servers'][$i]['auth_type'] = 'cookie';`, then change it to:
+* If we (for example) used phpMyAdmin on the internet hosting we purchased, we would first have to log in to the system. But for the purposes of this course, we are using local host (local server), which is visible only for us.
 
-`$cfg['Servers'][$i]['auth_type'] = 'config';`
+### Course of the exercise
+1. Launch **XAMPP** and start action of **Apache** and **MySQL** modules,
+2. Open your browser and go to `http://localhost/phpmyadmin` (working in the browser is much faster and more comfortable. For the purposes of this course, we will be using phpMyAdmin instead of VS Code adapted to SQL environment),
+3. A start screen should look like this (instead of "quiz" structure visible. Moreover I am using boo dark 1.2.0 theme):
 
-`$cfg['Servers'][$i]['user'] = 'root';`
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/12.jpg?raw=true" width="700">
 
-`$cfg['Servers'][$i]['password'] = '';`
+4. Create database **"quiz"** (I have already created it by VS Code, using statements visible in **query.sql** file). Go to **Databases**, then write **quiz** in *Database name* field. Choose desirable method of comparing inscriptions, in *"utf8"* format. Then click **Create**,
+5. Move to your **quiz** database. *Table name:* pytania, *Number of columns:* 7,
+6. Edit structure of this database:
 
-And make sure the `$i = 1;` server definition exists above it — it means “This is server number 1 in the list”. Then save the file and reload your local host.
-
-* 
+   1. *Name:* id (make it primary key: *Index:* PRIMARY, then click "Go"), 
