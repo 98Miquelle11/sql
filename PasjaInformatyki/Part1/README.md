@@ -205,7 +205,7 @@ Sorting records means arranging them according to some criterion. The criterion 
 `git pull origin (your branch)`
 
 ### How to initiate MySQL on VS Code
-1. You need to install **XAMP Control Panel** and switch on actions on **Apache** and **MySQL** modules,
+1. You need to install **XAMP Control Panel** and switch on actions on **Apache** (a standalone web server used for hosting websites) and **MySQL** modules,
 2. Open VS Code, go to **Extensions**, then install SQL tools - **SQLTools** by Matheus Teixeira and **SQLTools MySQL/MariaDB Driver**,
 3. Go to `http://localhost/phpmyadmin` > **User accounts**, and select **Edit priviligies** in a row when *User name = root* and *Host name = localhost*,
 4. Click **Change password** and set it,
@@ -240,4 +240,15 @@ Sorting records means arranging them according to some criterion. The criterion 
 ### Working with phpMyAdmin
 * Go to `http://localhost/phpmyadmin`,
 * When you are making a table inside your selected database, select **PRIMARY** Index, where you want your Name to be **Primary key**,
-* If we (for example) used phpMyAdmin on the internet hosting we purchased, we would first have to log in to the system. But for the purposes of this course, we are using local host (local server), which is visible only for us.
+* If we (for example) used phpMyAdmin on the internet hosting we purchased, we would first have to log in to the system. But for the purposes of this course, we are using local host (local server), which is visible only for us,
+* If local host will demand username and passowrd from you to log in, open `\xampp\phpMyAdmin\config.inc.php` file (whenever it is located), find the line `$cfg['Servers'][$i]['auth_type'] = 'cookie';`, then change it to:
+
+`$cfg['Servers'][$i]['auth_type'] = 'config';`
+
+`$cfg['Servers'][$i]['user'] = 'root';`
+
+`$cfg['Servers'][$i]['password'] = '';`
+
+And make sure the `$i = 1;` server definition exists above it — it means “This is server number 1 in the list”. Then save the file and reload your local host.
+
+* 
