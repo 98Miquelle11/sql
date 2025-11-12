@@ -253,4 +253,19 @@ Sorting records means arranging them according to some criterion. The criterion 
 5. Move to your **quiz** database. *Table name:* pytania, *Number of columns:* 7,
 6. Edit structure of this database:
 
-   1. *Name:* id (make it primary key: *Index:* PRIMARY, then click "Go"), 
+   1. *Name:* id (make it primary key: *Index:* PRIMARY, then click "Go"), *Type:* INT, switch on AUTO_INCREMENT (MySQL is counting by itself, which number of record are we putting into this table),
+   2. *Name:* tresc, *Type:* TEXT, *Collation:* utf8_polish_ci,
+   3. *Name:* odpa, *Type:* TEXT, *Collation:* utf8_polish_ci,
+   4. *Name:* odpb, *Type:* TEXT, *Collation:* utf8_polish_ci,
+   5. *Name:* odpc, *Type:* TEXT, *Collation:* utf8_polish_ci,
+   6. *Name:* odpd, *Type:* TEXT, *Collation:* utf8_polish_ci,
+   7. *Name:* answer, *Type:* TEXT, *Collation:* utf8_polish_ci.
+
+2. Under the table, in the *Collation* field, choose also **utf8_polish_ci**,
+3. Click **Save**.
+
+When you open table **pytania**, php returns you an information: *"MySQL returned an empty result set (i.e. zero rows)."* It is because we haven't uploaded any data into this table yet. In **Structure** tab you can see "pytania" table structure. It should look like this:
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/13.jpg?raw=true" width="700">
+
+1. Click **Insert** tab to insert first record,
