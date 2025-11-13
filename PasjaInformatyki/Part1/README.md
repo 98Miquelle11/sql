@@ -23,16 +23,16 @@ Table is a container for data. A collection of related information, usually pres
 ### Record
 Single row in a table, e.g., a set of fields appearing in it. For example, a set of characteristics for a given student (user).
 
-<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/1.jpg?raw=true" width="250">
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/1.jpg?raw=true" width="200">
 
 The record **does not have to** contain ALL features of the object. It can be, for example, just a name and surname.
 
-<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/3.jpg?raw=true" width="250">
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/3.jpg?raw=true" width="200">
 
 ### Field
 Part of a table that stores individual data, e.g. the name of a specific person in the table.
 
-<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/2.jpg?raw=true" width="250">
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/2.jpg?raw=true" width="200">
 
 ### Primary key
 One or more fields whose value uniquely identifies each record in a table. This characteristic of a key is called uniqueness. E.g **ID number**.
@@ -205,11 +205,13 @@ Sorting records means arranging them according to some criterion. The criterion 
 
 # Practice
 
+## Before the exercise
+
 ### How to update your local files
 `git pull origin (your branch)`
 
 ### How to initiate MySQL on VS Code
-1. You need to install **XAMP Control Panel** and switch on actions on **Apache** (a standalone web server used for hosting websites) and **MySQL** modules,
+1. You need to install [XAMP Control Panel](https://www.apachefriends.org/) and switch on actions on **Apache** (a standalone web server used for hosting websites) and **MySQL** modules,
 2. Open VS Code, go to **Extensions**, then install SQL tools - **SQLTools** by Matheus Teixeira and **SQLTools MySQL/MariaDB Driver**,
 3. Go to `http://localhost/phpmyadmin` > **User accounts**, and select **Edit priviligies** in a row when *User name = root* and *Host name = localhost*,
 4. Click **Change password** and set it,
@@ -246,10 +248,11 @@ Sorting records means arranging them according to some criterion. The criterion 
 * When you are making a table inside your selected database, select **PRIMARY** Index, where you want your Name to be **Primary key**,
 * If we (for example) used phpMyAdmin on the internet hosting we purchased, we would first have to log in to the system. But for the purposes of this course, we are using local host (local server), which is visible only for us.
 
-### Course of the exercise
+## Course of the exercise
 
 **Warning:** The exercise is executed using polish letters. If you want to use your own alphabet, it is recommended to choose specific collation (during the exercise).
 
+### Prepare your environment and create your first database
 1. Launch **XAMPP** and start action of **Apache** and **MySQL** modules,
 2. Open your browser and go to `http://localhost/phpmyadmin` (working in the browser is much faster and more comfortable. For the purposes of this course, we will be using phpMyAdmin instead of VS Code adapted to SQL environment),
 3. A start screen should look like this (instead of "quiz" structure visible. Moreover I am using boo dark 1.2.0 theme):
@@ -268,13 +271,14 @@ Sorting records means arranging them according to some criterion. The criterion 
    6. *Name:* odpd, *Type:* TEXT, *Collation:* utf8_polish_ci,
    7. *Name:* answer, *Type:* TEXT, *Collation:* utf8_polish_ci.
 
-2. Under the table, in the *Collation* field, choose also **utf8_polish_ci**,
-3. Click **Save**.
+7. Under the table, in the *Collation* field, choose also **utf8_polish_ci**,
+8. Click **Save**.
 
 When you open table **pytania**, php returns you an information: *"MySQL returned an empty result set (i.e. zero rows)."* It is because we haven't uploaded any data into this table yet. In **Structure** tab you can see "pytania" table structure. It should look like this:
 
 <img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/13.jpg?raw=true" width="700">
 
+### Add data to the table
 1. Click **Insert** tab to insert first record, for a trial (**quiz → pytania → Insert**),
 2. Write what you want in all of **Value** fields, only in one column,
 3. Click **Go**. Your display should look like this:
@@ -285,11 +289,12 @@ When you open table **pytania**, php returns you an information: *"MySQL returne
 
 <img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/15.jpg?raw=true" width="700">
 
+## Expand your table by additional columns
 Now, we want to expand table by 2 columns, one - informing about type of question, second - informing about year this question was on exam.
 
 1. Click **Structure**,
 2. Add **2** column(s) **after answer**, then click **Go**,
-3. Edit Fill the fields of these columns:
+3. Fill the fields of these columns:
 
    1. *Name:* kategoria, *Type:* TEXT, *Collation:* utf8_polish_ci,
    2. *Name:* rok, *Type:* INT (it will be easier to compare them later), *Collation:* utf8_polish_ci.
@@ -306,6 +311,7 @@ Unfortnately, if we change the number of columns after creating the table and in
 
 <img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/17.jpg?raw=true" width="700">
 
+### Import data into the table
 Now we are going to uplad serious set of data:
 1. Go to `https://miroslawzelent.pl/kurs-mysql/phpmyadmin-zapytania-wyszukujace-select/`,
 2. Click **PLIKI DO ODCINKA** to download .zip file,
@@ -324,4 +330,18 @@ Now you can click **quiz → pytania** and see the result:
 
 <img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/19.jpg?raw=true" width="800">
 
-... 29 min ...
+### Prepare environment for editing .txt files and execute the result
+1. Move **quiz** folder (previously downloaded and unpacked) to `.../xampp/htdocs` catalogue,
+
+Before doing that be sure, previous steps were executed - *quiz* database and *pytania* table created). Moreover, if your xampp requires a password, upload it in **dbconnect.php** placed in `.../xampp/htdocs`.
+
+2. Go to `...\xampp\htdocs\quiz` and edit **zapytanie.txt** by text and source code editor (for this course, I will use [Notepad ++](https://notepad-plus-plus.org/)). If you will work with another editor, go to step 3. If you want to work Notepad ++ too, you can follow my steps for best customization for this exercise:
+
+   1. In a menu section go to **Language → S → SQL** (you can also rename a file from `zapytanie.txt` to `zapytanie.sql` so that Notepad ++ auto-detects SQL syntax next time,
+   2. Go to **Settings → Style Configurator** and choose a good theme for SQL/PHP work (I will choose **Deep Black**). Then click **Save & Close**.
+
+3. The result of query in **zapytanie.txt** we can display in our browser. Because our file is located in **htdocs** (public directory for website files when using web servers) and **Apache** and **MySQL** services are switched on, we can write `localhost/quiz` in browser, then file **index.php** will be launched and executed:
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/20.jpg?raw=true" width="800">
+
+... 35 min ...
