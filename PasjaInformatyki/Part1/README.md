@@ -2,6 +2,10 @@
 
 *Success is a progressive realization of a valuable idea within a patient time frame.*
 
+### What will you learn:
+* terminology used in databases,
+* how to freely navigate in phpMyAdmin (create, modify and import database tables),
+
 # Theory
 
 ## Database
@@ -243,6 +247,9 @@ Sorting records means arranging them according to some criterion. The criterion 
 * If we (for example) used phpMyAdmin on the internet hosting we purchased, we would first have to log in to the system. But for the purposes of this course, we are using local host (local server), which is visible only for us.
 
 ### Course of the exercise
+
+**Warning:** The exercise is executed using polish letters. If you want to use your own alphabet, it is recommended to choose specific collation (during the exercise).
+
 1. Launch **XAMPP** and start action of **Apache** and **MySQL** modules,
 2. Open your browser and go to `http://localhost/phpmyadmin` (working in the browser is much faster and more comfortable. For the purposes of this course, we will be using phpMyAdmin instead of VS Code adapted to SQL environment),
 3. A start screen should look like this (instead of "quiz" structure visible. Moreover I am using boo dark 1.2.0 theme):
@@ -251,7 +258,7 @@ Sorting records means arranging them according to some criterion. The criterion 
 
 4. Create database **"quiz"** (I have already created it by VS Code, using statements visible in **query.sql** file). Go to **Databases**, then write **quiz** in *Database name* field. Choose desirable method of comparing inscriptions, in *"utf8"* format. Then click **Create**,
 5. Move to your **quiz** database. *Table name:* pytania, *Number of columns:* 7,
-6. Edit structure of this database:
+6. Fill the fields of this structure:
 
    1. *Name:* id (make it primary key: *Index:* PRIMARY, then click "Go"), *Type:* INT, switch on AUTO_INCREMENT (MySQL is counting by itself, which number of record are we putting into this table),
    2. *Name:* tresc, *Type:* TEXT, *Collation:* utf8_polish_ci,
@@ -268,4 +275,53 @@ When you open table **pytania**, php returns you an information: *"MySQL returne
 
 <img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/13.jpg?raw=true" width="700">
 
-1. Click **Insert** tab to insert first record,
+1. Click **Insert** tab to insert first record, for a trial (**quiz → pytania → Insert**),
+2. Write what you want in all of **Value** fields, only in one column,
+3. Click **Go**. Your display should look like this:
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/14.jpg?raw=true" width="600">
+
+4. Click **Browse** to see the result of your implementation:
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/15.jpg?raw=true" width="700">
+
+Now, we want to expand table by 2 columns, one - informing about type of question, second - informing about year this question was on exam.
+
+1. Click **Structure**,
+2. Add **2** column(s) **after answer**, then click **Go**,
+3. Edit Fill the fields of these columns:
+
+   1. *Name:* kategoria, *Type:* TEXT, *Collation:* utf8_polish_ci,
+   2. *Name:* rok, *Type:* INT (it will be easier to compare them later), *Collation:* utf8_polish_ci.
+
+5. Click **Save**. By clicking **Browse**, you can see results better:
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/16.jpg?raw=true" width="700">
+
+Unfortnately, if we change the number of columns after creating the table and inserting data, we need to fill the the empty fields manually.
+
+6. Click **Edit**,
+7. Fill the new fields,
+8. Click **Go**. Now your record should look like this:
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/17.jpg?raw=true" width="700">
+
+Now we are going to uplad serious set of data:
+1. Go to `https://miroslawzelent.pl/kurs-mysql/phpmyadmin-zapytania-wyszukujace-select/`,
+2. Click **PLIKI DO ODCINKA** to download .zip file,
+3. Go back to phpMyAdmin, then click **quiz**,
+4. Click **drop** next to *pytania* table,
+5. Mark **Enable foreign key checks** and click **OK**,
+6. Be sure you are in **quiz** database:
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/18.jpg?raw=true" width="700">
+
+8. Click **Import → Selext file**,
+9. Choose **pytania.sql** in your unpacked **quiz** file,
+10. Leave default settings as they are, then click **Import**.
+
+Now you can click **quiz → pytania** and see the result:
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/19.jpg?raw=true" width="800">
+
+... 29 min ...
