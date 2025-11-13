@@ -83,9 +83,11 @@ Database Management System. **MySQL**, PostgreSQL, Firebird, Oracle Database are
 
 
 *An example of a relational model in the form of a single table.*
+
 <img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/9.jpg?raw=true" width="550">
 
-*An example of a relational model in the form of two related tables.*
+*An example of the relational model in the form of two related tables.*
+
 <img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/10.jpg?raw=true" width="550">
 
 ## SQL
@@ -340,8 +342,54 @@ Before doing that be sure, previous steps were executed - *quiz* database and *p
    1. In a menu section go to **Language → S → SQL** (you can also rename a file from `zapytanie.txt` to `zapytanie.sql` so that Notepad ++ auto-detects SQL syntax next time,
    2. Go to **Settings → Style Configurator** and choose a good theme for SQL/PHP work (I will choose **Deep Black**). Then click **Save & Close**.
 
-3. The result of query in **zapytanie.txt** we can display in our browser. Because our file is located in **htdocs** (public directory for website files when using web servers) and **Apache** and **MySQL** services are switched on, we can write `localhost/quiz` in browser, then file **index.php** will be launched and executed:
+3. The result of query in **zapytanie.txt** can be displayed in our browser. Because our file is located in **htdocs** (public directory for website files when using web servers) and **Apache** and **MySQL** services are switched on, we can write `localhost/quiz` in browser, then file **index.php** will be launched and executed:
 
 <img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/20.jpg?raw=true" width="800">
 
-... 35 min ...
+### Commands and queries for their execution
+
+* *The basics to start with:*
+
+`SELECT * FROM pytania` - select **all columns** from table **pytania** (result seen on picture above).
+
+`SELECT tresc, odpa, odpb, odpc, odpd FROM pytania` - select columns **tresc, odpa, odpb, odpc, odpd** from table **pytania**.
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/21.jpg?raw=true" width="700">
+
+* *Find question no. 15 in the database.*
+
+`SELECT * FROM pytania WHERE id = 15` - select **all columns** from table **pytania**, where **id** is equal to 15 (in SQL "=" is equation operator).
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/22.jpg?raw=true" width="700">
+
+* *Find questions where the correct answer is ‘a’ in the database.*
+
+`SELECT * FROM pytania WHERE answer = "a"` - select **all columns** from table **pytania**, where **answer** is **a** (a is a text. In SQL is necessary to put text between quotation marks. Only texts - components are without quotation marks).
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/23.jpg?raw=true" width="700">
+
+* *Find questions from 2007 in the database.*
+
+`SELECT * FROM pytania WHERE rok = 2007` - select **all columns** from table **pytania**, where **rok** is **2007**(putting "2007" in quotation marks will not spoil this query – the same result will be displayed).
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/24.jpg?raw=true" width="700">
+
+* *Find programming questions from 2009 in the database.*
+
+`SELECT * FROM pytania WHERE kategoria = "programowanie" AND rok = 2009` - select **all columns** from table **pytania**, where **kategoria** is **programowanie** and **rok** is **2007**.
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/25.jpg?raw=true" width="700">
+
+* *Find only the content of questions and 4 answers from 2010 in the database.*
+
+`SELECT tresc, odpa, odpb, odpc, odpd FROM pytania WHERE rok = 2010` - select columns **tresc, odpa, odpb, odpc, odpd** from table **pytania**, where **rok** is **2010**.
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/26.jpg?raw=true" width="700">
+
+* *Find questions arranged alphabetically by content (pol. tresc) in the database.*
+
+`SELECT * FROM pytania ORDER BY tresc ASC` - select **all columns** from table **pytania**, where **tresc** is sorted by in ascending order (it is text, so alphabetically. It will also work without "ASC" in the end, because text is sorted by alphabetically by default).
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/27.jpg?raw=true" width="700">
+
+...51 min...
