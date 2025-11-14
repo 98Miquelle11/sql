@@ -292,7 +292,7 @@ When you open table **pytania**, php returns you an information: *"MySQL returne
 
 <img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/15.jpg?raw=true" width="700">
 
-## Expand your table by additional columns
+### Expand your table by additional columns
 Now, we want to expand table by 2 columns, one - informing about type of question, second - informing about year this question was on exam.
 
 1. Click **Structure**,
