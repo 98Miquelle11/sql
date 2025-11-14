@@ -3,8 +3,9 @@
 *Success is a progressive realization of a valuable idea within a patient time frame.*
 
 ### What will you learn:
-* terminology used in databases,
-* how to freely navigate in phpMyAdmin (create, modify and import database tables),
+* Terminology used in databases,
+* How to freely navigate in phpMyAdmin (create, modify and import database tables),
+* How to write your first search queries in SQL.
 
 # Theory
 
@@ -370,7 +371,7 @@ Before doing that be sure, previous steps were executed - *quiz* database and *p
 
 * *Find questions from 2007 in the database.*
 
-`SELECT * FROM pytania WHERE rok = 2007` - select **all columns** from table **pytania**, where **rok** is **2007**(putting "2007" in quotation marks will not spoil this query – the same result will be displayed).
+`SELECT * FROM pytania WHERE rok = 2007` - select **all columns** from table **pytania**, where **rok** is **2007** (putting "2007" in quotation marks will not spoil this query – the same result will be displayed).
 
 <img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/24.jpg?raw=true" width="700">
 
@@ -392,4 +393,26 @@ Before doing that be sure, previous steps were executed - *quiz* database and *p
 
 <img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/27.jpg?raw=true" width="700">
 
-...51 min...
+* *Find content of questions numbered 10-12 in the database.*
+
+`SELECT tresc FROM pytania WHERE id BETWEEN 10 AND 12` - select **tresc** column from table **pytania**, where **id** is between 10 and 12 (10, 11, 12).
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/28.jpg?raw=true" width="700">
+
+* *Find questions beginning with the words "Jak" in the database.*
+
+`SELECT * FROM pytania WHERE tresc LIKE "Jak%"` - select **all columns** from table **pytania**, search where **tresc** is similar to **"Jak%"** (it starts with "Jak" but string can be continued).
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/29.jpg?raw=true" width="700">
+
+* *Find questions containing the phrase "C++" in the database.*
+
+`SELECT * FROM pytania WHERE tresc LIKE "%C++%" OR odpa LIKE "%C++%" OR odpb LIKE "%C++%" OR odpc LIKE "%C++%" OR odpd LIKE "%C++%"` - select **all columns** from table **pytania**, search where **tresc** is similar to **"%C++%"** (string can be before and after "C++") or **odpa** is similar to **"%C++%"** or **odpb** is similar to **"%C++%"** or **odpc** is similar to **"%C++%"** or **odpd** is similar to **"%C++%"**.
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/30.jpg?raw=true" width="700">
+
+* *Find questions on programming, operating systems and networks from 2012 in the database.*
+
+`SELECT * FROM pytania WHERE (kategoria = "programowanie" OR kategoria = "systemy operacyjne i sieci") AND rok = 2012` - select **all columns** from table **pytania**, where **kategoria** is **programowanie** and **rok** is **2012** or **kategoria** is **systemy operacyjne i sieci** and **rok** is **2012**.
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/31.jpg?raw=true" width="700">
