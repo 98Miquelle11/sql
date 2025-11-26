@@ -2,7 +2,7 @@
 
 *Experience shows that the success of programming course critically depends on the choice of presented examples.*
 
-### what you should already know
+### What you should already know
 * topics from [part1](https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/Part1/README.md).
 
 ### What will you learn:
@@ -39,7 +39,7 @@ Our database will be:
   * **klienci** table,
   * **zamowienia** table.
 
-* we will have 2 relations in out database: **idklenta** and **idksiazki**.
+* we will have 2 relations in out database: **idklienta** and **idksiazki**.
 
 <img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/32.jpg?raw=true" width="800">
 
@@ -53,7 +53,43 @@ Our database will be:
 5. Move **ksiegarnia** catalog to `.../xampp/htdocs`,
 6. Edit **zapytanie.txt** with Notepad ++ and open `http://localhost/ksiegarnia/` in your browser.
 
+### Find in a database:
 
+* *Books sorted alphabetically by title.*
+
+`SELECT * FROM ksiazki ORDER BY tytul` - select **all columns** from table **ksiazki**, and order it alphabetically by their titles
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/33.jpg?raw=true" width="800">
+
+* *The most expensive book.*
+
+`SELECT * FROM ksiazki ORDER BY cena DESC LIMIT 1` - select **all columns** from table **ksiazki**, and order it in descending order by their prizes, then limit view of the records only to one row.
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/34.jpg?raw=true" width="800">
+
+* *All orders shipped.*
+
+`SELECT * FROM zamowienia WHERE status = "wyslano"` - select **all columns** from table **zamowienia**, where string **"wyslano"** is obligatory in column **status**.
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/35.jpg?raw=true" width="800">
+
+* *Where all customers are with the last name "Rutkowski".*
+
+`SELECT * FROM klienci WHERE nazwisko = "Rutkowski"` - select **all columns** from table **klienci**, where string **"Rutkowski"** is obligatory in column **nazwisko**.
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/36.jpg?raw=true" width="800">
+
+* *Books containing the phrase “PHP” in the title.*
+
+`SELECT * FROM ksiazki WHERE tytul LIKE "%PHP%"` - select **all columns** from table **ksiazki**, where string in column **tytul** should have string **"PHP"** somewhere in an entire string.
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/37.jpg?raw=true" width="800">
+
+* *Orders sorted by most recent.*
+
+`SELECT * FROM ksiazki WHERE tytul LIKE "%PHP%"` - select **all columns** from table **ksiazki**, where string in column **tytul** should have string **"PHP"** somewhere in an entire string.
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/37.jpg?raw=true" width="800">
 
 ## Homework
 * A pack of 10 questions to work through,
