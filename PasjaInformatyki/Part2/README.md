@@ -25,7 +25,7 @@ The data we want to extract from the database is in more than one table. This ca
 When creating complex queries, you must provide a list of all relationships that exist between the tables used in the query! The mere similarity of names is not enough, because such a similarity could occur by chance.
 
 ## The principle of creating complex queries
-It is the programmer's responsibility to provide a list of all relationships between the tables used in the query - this list should be placed after the WHERE clause.
+It is the programmer's responsibility to provide a list of all relationships between the tables used in the query - this list should be placed after the **WHERE** clause.
 
 # Practice
 **Warning:** The exercise is executed using polish words and letters. If you want to use your own language and alphabet, it is recommended to choose specific collation (during the exercise).
@@ -87,9 +87,51 @@ Our database will be:
 
 * *Orders sorted by most recent.*
 
-`SELECT * FROM ksiazki WHERE tytul LIKE "%PHP%"` - select **all columns** from table **ksiazki**, where string in column **tytul** should have string **"PHP"** somewhere in an entire string.
+`SELECT * FROM zamowienia ORDER BY data DESC` - select **all columns** from table **zamowienia**, and order it in descending order by data of placing an order.
 
-<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/37.jpg?raw=true" width="800">
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/38.jpg?raw=true" width="800">
+
+### Queries related to connecting the tables:
+
+* *For all orders, include: full name of the customer placing the order, the order ID, and the order date.*
+
+`SELECT klienci.imie, klienci.nazwisko,zamowienia.idzamowienia, zamowienia.data 
+FROM klienci, zamowienia WHERE klienci.idklienta = zamowienia.idklienta` - we are including specific columns from specific tables and mentioning about relation between **idklienta** in **klienci** and **zamowienia** tables.
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/39.jpg?raw=true" width="800">
+
+* *For all orders, include: full name of the customer placing the order, the order ID, and the order date (but with aliases (nicknames) for tables).*
+
+`SELECT k.imie, k.nazwisko,z.idzamowienia, z.data FROM klienci AS k, zamowienia AS z
+WHERE k.idklienta = z.idklienta` - we changes columns' names to nicknames and mentioned, what they mean by command **AS**.
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/39.jpg?raw=true" width="800">
+
+* *The full names of people who have ever ordered book no. 2.*
+
+`SELECT k.imie, k.nazwisko,z.idzamowienia, z.data FROM klienci AS k, zamowienia AS z
+WHERE z.idksiazki = 2 AND z.idklienta = k.idklienta`
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/40.jpg?raw=true" width="800">
+
+* *What books (title, author) did Jan Nowak order?*
+
+`SELECT k.tytul, k.imieautora, k.nazwiskoautora 
+FROM ksiazki AS k, zamowienia AS z
+WHERE z.idklienta = 2 AND k.idksiazki = z.idksiazki`
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/41.jpg?raw=true" width="800">
+
+* *Orders placed by persons with the surname Rutkowski, sorted by date from
+the most recent (name and surname of the person placing the order, ID, date and status
+of the order, title of the book ordered).*
+
+`SELECT kl.imie, kl.nazwisko, ks.tytul, z.idzamowienia, z.data, z.status
+FROM ksiazki AS ks, klienci AS kl, zamowienia AS z
+WHERE kl.nazwisko = "Rutkowski" AND ks.idksiazki = z.idksiazki
+AND kl.idklienta = z.idklienta ORDER BY z.data DESC` - it was better to search for "Rutkowski" by surname, not ID, because there is more than one Rutkowski.
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/43.jpg?raw=true" width="800">
 
 ## Homework
 * A pack of 10 questions to work through,
