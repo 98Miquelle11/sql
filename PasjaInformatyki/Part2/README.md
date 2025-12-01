@@ -134,8 +134,74 @@ AND kl.idklienta = z.idklienta ORDER BY z.data DESC` - it was better to search f
 <img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/43.jpg?raw=true" width="800">
 
 ## Homework
+
+### Detailes
 * A pack of 10 questions to work through,
 * Database: **car rental database**,
 * Name of the database: **samochody**,
 * Files to download [here](https://miroslawzelent.pl/kurs-mysql/zapytania-zlozone-select-wyjecie-danych-z-kilku-tabel/),
 * Destination: `...\xampp\htdocs\samochody`.
+
+### Queries
+* *First and last name (only these two pieces of information) of customer number 4.*
+
+`SELECT imie, nazwisko FROM klienci WHERE idklienta = 4`
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/42.jpg?raw=true" width="800">
+
+* *All data on cars from 2010.*
+
+`SELECT * FROM auta WHERE rocznik = 2010`
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/44.jpg?raw=true" width="800">
+
+* *All data on Ford cars owned by us (in other words: “what Ford cars do we have in the company and what do we know about them?”).*
+
+`SELECT * FROM auta WHERE marka = "Ford"`
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/45.jpg?raw=true" width="800">
+
+* *Cars with numbers 2 to 4 inclusive in the database.*
+
+`SELECT * FROM auta WHERE marka = "Ford"`
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/46.jpg?raw=true" width="800">
+
+* *First and last names of customers who live in Katowice on Rolna Street (at any number).*
+
+`SELECT imie, nazwisko FROM klienci WHERE adres LIKE "Rolna %"`
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/47.jpg?raw=true" width="800">
+
+* *The car in the database (make, model) with the most expensive insurance of all cars.*
+
+`SELECT marka, model FROM auta ORDER BY ubezpieczenie DESC LIMIT 1`
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/48.jpg?raw=true" width="800">
+
+* *The car (idauta, make, model) that was rented earliest (based on the rental date).*
+
+`SELECT a.idauta, a.marka, a.model FROM auta AS a, wypozyczenia AS w WHERE a.idauta = w.idauta ORDER BY w.datawyp LIMIT 1`
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/49.jpg?raw=true" width="800">
+
+* *The first and last names of people who have ever rented car no. 1.*
+
+`SELECT k.imie, k.nazwisko FROM klienci AS k, wypozyczenia AS w
+WHERE k.idklienta = w.idklienta AND w.idauta = 1`
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/50.jpg?raw=true" width="800">
+
+* *What cars (make, model) has person no. 4 ever rented from us?*
+
+`SELECT a.marka, a.model FROM auta AS a, wypozyczenia AS w
+WHERE a.idauta = w.idauta AND w.idklienta = 4`
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/51.jpg?raw=true" width="800">
+
+* *What cars (make, model) has a person named “Pastewniak” ever rented from us?*
+
+`SELECT a.marka, a.model FROM auta AS a, wypozyczenia AS w, klienci AS k
+WHERE a.idauta = w.idauta AND k.idklienta = w.idklienta AND k.nazwisko = "Pastewniak"`
+
+<img src="https://github.com/98Miquelle11/sql/blob/main/PasjaInformatyki/images/52.jpg?raw=true" width="800">
